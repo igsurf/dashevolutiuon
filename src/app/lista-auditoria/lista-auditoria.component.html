@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <app-auditoria-item-detail
+        *ngFor="let myAuditoria of listaAuditorias; let i = index"
+        [auditoriaDetail]="myAuditoria"
+        [index]="i"
+      ></app-auditoria-item-detail>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<!--<textarea class="myLiveChat" rows="4" cols="50">
+Testando o live chat
+</textarea>-->
+<div class="col-xs-12">
+  <div class="myLiveChat">
+    <p class="myMessage" *ngFor="let mensagem of mensagens" [hidden]="!mensagem"><strong>{{mensagem?.timestamp | date:'shortTime'}} - {{
+      mensagem?.user }}:</strong> {{mensagem?.text}}</p>
+  </div>
+  <hr>
+  <div class="myChat" *ngIf="isChatDisabled" class="col-xs-12">
+    <div class="row">
+      <div class="col-xs-10">
+        <textarea name="meuTexto" class="myTextArea" rows="1" [(ngModel)]="messageTextArea"></textarea>
+      </div>
+      <div class="col-xs-2">
+        <button name="meuBotao" type="button" class="btn btn-success meuBotao btn-block" (click)="sendNewMessage()">Enviar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

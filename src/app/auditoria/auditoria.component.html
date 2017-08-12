@@ -1,0 +1,39 @@
+<div *ngIf="!isLiveActive">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="text-center">
+                <h2>Não há auditorias ativas nesse momento</h2>
+                <button class="btn btn-primary" data-toggle="modal" data-target="#modalNovaAuditoria"> Iniciar Auditoria</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modalNovaAuditoria" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <label class="glyphicon glyphicon-remove" style="font-size:20px; cursor:pointer; float:right" title="Cancelar">
+                        <button  type="button" class="close" data-dismiss="modal" aria-label="Close" style="display:none"></button>
+                    </label>
+                    <h4 class="modal-title">Nova Auditoria</h4>
+                </div>
+                <div style="margin-bottom:20px;" class="col-xs-12">
+                    <form #auditoriaForm="ngForm" novalidate>
+                        <div class="form-group has-danger" [ngClass]="getFormGroupClass(nome.valid, nome.pristine)" class="col-xs-12">
+                            <br/>
+                            <label for="nome" class="form-control-label">Nome da Auditoria:</label>
+                            <input type="text" required [ngClass]="getFormControlClass(nome.valid,nome.pristine)" name="nome" placeholder="Insira o nome da Auditoria" [(ngModel)]="auditoria.nome" #nome="ngModel">
+                            <br/>
+                            <label for="name" class="form-control-label">Nome do Usuário:</label>
+                            <input type="text" required [ngClass]="getFormControlClass(name.valid,name.pristine)" name="name" placeholder="Insira o seu nome" [(ngModel)]="usuario.name" #name="ngModel">
+                        </div>
+                        <div class="col-xs-12">
+                            <button (click)="onSubmit($event)" data-dismiss="modal" type="submit" class="btn btn-primary" style="float:right;margin-top:20px" [disabled]="!auditoriaForm.form.valid">Salvar</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer" style="clear:both">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
