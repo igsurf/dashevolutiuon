@@ -2,14 +2,14 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 declare let d3: any;
 
 @Component({
-  selector: 'app-dashboards',
-  templateUrl: './dashboards.component.html',
+  selector: 'app-dashboard-pizza',
+  templateUrl: './dashboard-pizza.component.html',
   styleUrls: [
-    '../../../node_modules/nvd3/build/nv.d3.css'
+    '../../../../node_modules/nvd3/build/nv.d3.css'
   ],
   encapsulation: ViewEncapsulation.None
 })
-export class DashboardsComponent implements OnInit {
+export class DashboardPizzaComponent implements OnInit {
 
   options;
   data;

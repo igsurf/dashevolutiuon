@@ -16,9 +16,12 @@ import { UsersInLiveComponent } from './users-in-live/users-in-live.component';
 import { SocketService } from "app/socket.service";
 import { DashboardsComponent } from './dashboards/dashboards.component';
 import { NvD3Module } from 'ng2-nvd3';
+import { CarouselModule } from 'ngx-bootstrap';
 
 import 'd3';
 import 'nvd3';
+import { CarouselComponent } from './carousel/carousel.component';
+import { DashboardPizzaComponent } from "app/dashboards/dashboard-pizza/dashboard-pizza.component";
 
 @NgModule({
   declarations: [
@@ -31,7 +34,9 @@ import 'nvd3';
     ListaAuditoriaComponent,
     AuditoriaItemDetailComponent,
     UsersInLiveComponent,
-    DashboardsComponent
+    DashboardsComponent,
+    CarouselComponent,
+    DashboardPizzaComponent
   ],
   imports: [
     CommonModule,
@@ -39,9 +44,10 @@ import 'nvd3';
     FormsModule,
     HttpModule,
     FeatureRoutingModule,
-    NvD3Module
+    NvD3Module,
+    CarouselModule
   ],
   providers: [SocketService],
-  bootstrap: [AppComponent,NavBarComponent]
+  bootstrap: [AppComponent, NavBarComponent]
 })
 export class AppModule { }
