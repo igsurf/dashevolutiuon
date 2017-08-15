@@ -3,11 +3,7 @@ declare let d3: any;
 
 @Component({
   selector: 'app-dashboards',
-  template: `
-    <div>
-      <nvd3 [options]="options" [data]="data"></nvd3>
-    </div>
-  `,
+  templateUrl: './dashboards.component.html',
   styleUrls: [
     '../../../node_modules/nvd3/build/nv.d3.css'
   ],
