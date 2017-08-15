@@ -14,7 +14,11 @@ import { ListaAuditoriaComponent } from './lista-auditoria/lista-auditoria.compo
 import { AuditoriaItemDetailComponent } from './lista-auditoria/auditoria-item-detail/auditoria-item-detail.component';
 import { UsersInLiveComponent } from './users-in-live/users-in-live.component';
 import { SocketService } from "app/socket.service";
+import { DashboardsComponent } from './dashboards/dashboards.component';
+import { NvD3Module } from 'ng2-nvd3';
 
+import 'd3';
+import 'nvd3';
 
 @NgModule({
   declarations: [
@@ -26,14 +30,16 @@ import { SocketService } from "app/socket.service";
     AuditoriaComponent,
     ListaAuditoriaComponent,
     AuditoriaItemDetailComponent,
-    UsersInLiveComponent
+    UsersInLiveComponent,
+    DashboardsComponent
   ],
   imports: [
     CommonModule,
     BrowserModule,
     FormsModule,
     HttpModule,
-    FeatureRoutingModule
+    FeatureRoutingModule,
+    NvD3Module
   ],
   providers: [SocketService],
   bootstrap: [AppComponent,NavBarComponent]
