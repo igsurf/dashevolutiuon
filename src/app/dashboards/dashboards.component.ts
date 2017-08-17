@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import {SocketService} from "app/socket.service";
 declare let d3: any;
 
 @Component({
@@ -14,7 +15,12 @@ export class DashboardsComponent implements OnInit {
   options;
   data;
 
+  constructor(private socketService: SocketService) {
+  }
+
   ngOnInit() {
+    this.socketService.connect();
+
     this.options = {
       chart: {
         type: 'discreteBarChart',
