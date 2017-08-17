@@ -12,7 +12,7 @@ export class SocketService {
   }
 
   // private url = 'https://warm-wildwood-70824.herokuapp.com/chat';
-  private url = 'http://localhost:3000/chat';
+  private url = 'http://localhost:3000/dashboard';
 
   mensagens: Mensagem;
   private socket;
