@@ -1,4 +1,3 @@
-import { Auditoria } from './models/auditoria.model';
 import { Component, OnInit, Output } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 declare var jQuery: any;
@@ -10,13 +9,11 @@ declare var jQuery: any;
 })
 export class AppComponent implements OnInit {
 
-
   constructor(private router: Router) {
   }
 
   ngOnInit() {
     this.router.navigate(['dashboards']);
   }
-
 
 }
