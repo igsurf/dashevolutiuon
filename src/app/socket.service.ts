@@ -42,7 +42,8 @@ export class SocketService {
   }
 
   public dadosGraficoLinguagem$: BehaviorSubject<Object> = new BehaviorSubject(this.dadosGraficoLinguagens);
-
+  public dadosGraficoPaises$: BehaviorSubject<Object> = new BehaviorSubject(this.dadosGraficoPaises);
+  
   private _dadosGraficoLinguagem;
   public get dadosGraficoLinguagens() {
     return this._dadosGraficoLinguagem;
@@ -52,6 +53,17 @@ export class SocketService {
     this._dadosGraficoLinguagem = data;
     this.dadosGraficoLinguagem$.next(data);
   }
+
+  private _dadosGraficoPaises;
+  public get dadosGraficoPaises() {
+    return this._dadosGraficoPaises;
+  }
+
+  public set dadosGraficoPaises(data) {
+    this._dadosGraficoPaises = data;
+    this.dadosGraficoPaises$.next(data);
+  }
+  
 
   private subject = new Subject<any>();
 
@@ -86,8 +98,9 @@ export class SocketService {
       }
     });
 
-    this.socket.on('carregarGraficoLinguagens', (data) => {
-      this.dadosGraficoLinguagens = data;
+    this.socket.on('carregarGraficoLinguagens', (dataLinguagens, dataPaises) => {
+      this.dadosGraficoLinguagens = dataLinguagens;
+      this.dadosGraficoPaises = dataPaises;
     });
   }
 
