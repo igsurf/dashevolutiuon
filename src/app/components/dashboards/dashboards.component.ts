@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
-import {SocketService} from '../../socket.service';
+import {SocketService} from '../../services/socket.service';
 declare let d3: any;
 
 @Component({

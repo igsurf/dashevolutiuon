@@ -4,10 +4,10 @@ import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {CommonModule} from '@angular/common';
 import {FeatureRoutingModule} from './app-routing.module';
-import {SocketService} from 'app/socket.service';
 import {NvD3Module} from 'ng2-nvd3';
 
 import Components from './components/components';
+import Services from './services/services';
 
 import 'd3';
 import 'nvd3';
@@ -27,7 +27,9 @@ import 'nvd3';
     exports: [
         Components.exports
     ],
-    providers: [SocketService],
+    providers: [
+        Services.providers
+    ],
     bootstrap: [
         Components.bootstrap
     ]

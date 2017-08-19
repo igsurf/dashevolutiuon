@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Subject, Observable, BehaviorSubject} from "rxjs/Rx";
-import {Mensagem} from "app/models/mensagem";
+import {Mensagem} from "../models/mensagem";
 import * as io from 'socket.io-client';
 import {Router} from '@angular/router';
 
@@ -43,7 +43,7 @@ export class SocketService {
 
   public dadosGraficoLinguagem$: BehaviorSubject<Object> = new BehaviorSubject(this.dadosGraficoLinguagens);
   public dadosGraficoPaises$: BehaviorSubject<Object> = new BehaviorSubject(this.dadosGraficoPaises);
-  
+
   private _dadosGraficoLinguagem;
   public get dadosGraficoLinguagens() {
     return this._dadosGraficoLinguagem;
@@ -63,7 +63,7 @@ export class SocketService {
     this._dadosGraficoPaises = data;
     this.dadosGraficoPaises$.next(data);
   }
-  
+
 
   private subject = new Subject<any>();
 
